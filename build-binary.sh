@@ -10,6 +10,6 @@ shift
 
 antifennel "${LUA_FILE}" > "${NAME}.fnl"
 fennel --compile --require-as-include "${NAME}.fnl" > "tmp.lua"
-luastatic "tmp.lua" "$STATIC_LUA_LIB" "-I${LUA_INCLUDE_DIR}"
+luastatic "tmp.lua" "$STATIC_LUA_LIB" "-I${LUA_INCLUDE_DIR}" -s -static -no-pie
 mv "tmp" "${NAME}"
 rm "${NAME}.fnl" "tmp.lua" "tmp.luastatic.c"
